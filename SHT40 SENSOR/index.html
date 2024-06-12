@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Eljily-Mohamed.github.io/project_emb_docs/SHT40%20SENSOR/">
+      
+      
+        <link rel="prev" href="../IHM/">
+      
+      
+        <link rel="next" href="../TCS3414CS%20SENSOR/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>SHT40 SENSOR - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sht40-sensor" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SHT40 SENSOR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Homepage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IHM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IHM System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SHT40 SENSOR
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    SHT40 SENSOR
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller-development-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Development Kit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-functions-for-sensor-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Functions for Sensor Communication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-details-about-the-sht40-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Details about the SHT40 Sensor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Details about the SHT40 Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i2c-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      I2C Communication:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-type-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Type &amp; Length:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checksum Calculation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Overview:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task One
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task One">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#here-is-an-image-explaining-the-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Here is an image explaining the process:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-two" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Two
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TCS3414CS%20SENSOR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCS34725CS SENSOR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller-development-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Development Kit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-functions-for-sensor-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Functions for Sensor Communication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-details-about-the-sht40-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Details about the SHT40 Sensor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Details about the SHT40 Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i2c-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      I2C Communication:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-type-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Type &amp; Length:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checksum-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checksum Calculation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Overview:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensor-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task One
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task One">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#here-is-an-image-explaining-the-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Here is an image explaining the process:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-two" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Two
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sht40-sensor">SHT40 SENSOR</h1>
+<p><img src="/images/grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
+This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove SHT40 Temperature and Humidity Sensor.</p>
+<h2 id="hardware-components">Hardware Components</h2>
+<h4 id="microcontroller-development-kit">Microcontroller Development Kit</h4>
+<p>We utilize an STM32 microcontroller development kit to build and debug code for the card. This development kit, provided by the ENIB internal pack we use in our course (<a href="https://git.enib.fr/bald/mip_install/-/tree/main/fichiers?ref_type=heads">SDK pack</a>), allows us to efficiently develop and debug firmware for the embedded system.</p>
+<h2 id="software-implementation">Software Implementation</h2>
+<p>Before we can utilize the SHT40 sensor, it's crucial to establish communication with it using the I2C protocol and configure it with the appropriate settings. To achieve this, we need to implement basic functions that facilitate communication with the sensor. These functions serve as the foundation for all subsequent interactions with the sensor. </p>
+<h2 id="project-structure">Project Structure</h2>
+<p>To integrate the SHT40 sensor into our project, you'll need to follow these steps:</p>
+<ol>
+<li>Create the necessary files:</li>
+<li><code>sht40.h</code>: Header file for SHT40 sensor interface.</li>
+<li><code>sht40.c</code>: Source file for SHT40 sensor implementation.</li>
+</ol>
+<h2 id="essential-functions-for-sensor-communication">Essential Functions for Sensor Communication</h2>
+<p>To interact with the SHT40 sensor, we implement the following fundamental functions:</p>
+<ol>
+<li><strong><code>sht4x_write(uint8_t reg, uint8_t value)</code>:</strong> This function writes a single byte of data to a specified register of the sensor..</li>
+</ol>
+<pre><code class="language-cpp">
+    static int16_t sht4x_write(uint8_t reg, uint8_t value) {
+        uint8_t data[2];
+        data[0] = reg;
+        data[1] = value &amp; 0xFF;
+        return i2c_write(I2C1, SHT4X_ADDRESS, data, sizeof(data));
+    }
+
+</code></pre>
+<ol>
+<li><strong><code>read(uint8_t reg , int delay)</code>:</strong> This function reads a single byte of data from a specified register of the sensor.</li>
+</ol>
+<pre><code class="language-cpp">
+    static uint8_t sht4x_read(uint8_t reg, int delay) {
+        uint8_t value;
+        uint8_t reg_data[1] = {reg};
+
+        if (i2c_write(I2C1, SHT4X_ADDRESS, reg_data, 1) != I2C_OK) {
+            uart_puts(_USART2, &quot;\n\rErreur lors de l'écriture dans le registre\n&quot;);
+            return 0;
+        }
+
+        delay_us(delay);
+
+        if (i2c_read(I2C1, SHT4X_ADDRESS, &amp;value, 1) != I2C_OK) {
+            uart_puts(_USART2, &quot;\n\rErreur lors de la lecture d'octets\n&quot;);
+            return 0;
+        }
+
+        return value;
+    }
+
+</code></pre>
+<ol>
+<li><strong><code>write_n(uint8_t reg, uint8_t* values, uint8_t length)</code>:</strong> This function writes multiple bytes of data to consecutive registers of the sensor.</li>
+</ol>
+<pre><code class="language-cpp">
+    static int16_t sht4x_write_n(uint8_t reg, uint8_t* values, uint8_t length) {
+        uint8_t data[length + 1];
+        data[0] = reg;
+        for (size_t i = 0; i &lt; length; i++) {
+            data[i + 1] = values[i];
+        }
+        return i2c_write(I2C1, SHT4X_ADDRESS, data, sizeof(data));
+    }
+
+</code></pre>
+<ol>
+<li><strong><code>read_n(uint8_t reg, uint8_t* values, uint8_t length, int delay)</code>:</strong> This function reads multiple bytes of data from consecutive registers of the sensor.</li>
+</ol>
+<pre><code class="language-cpp">
+    void read_n(uint8_t reg, uint8_t* values, uint8_t length, int delay) {
+        uint8_t reg_data[1] = {reg};
+
+        if (i2c_write(I2C1, SHT4X_ADDRESS, reg_data, 1) != I2C_OK) {
+            uart_puts(_USART2,&quot;\n\rErreur lors de l'écriture dans le registre\n&quot;);
+            return I2C_ERROR;
+        }
+
+        delay_us(delay);
+
+        if (i2c_read(I2C1, SHT4X_ADDRESS, values, length) != I2C_OK) {
+            uart_puts(_USART2,&quot;\n\rErreur lors de la lecture d'octets\n&quot;);
+            return;
+        }
+    }
+
+</code></pre>
+<ol>
+<li><strong><code>sht4x_write_cmd(const uint8_t* cmd)</code>:</strong> This function writes a command to the sensor.</li>
+</ol>
+<pre><code class="language-cpp">    static int16_t sht4x_write_cmd(const uint8_t* cmd) {
+        return i2c_write(I2C1, SHT4X_ADDRESS, cmd, 1);
+    }
+</code></pre>
+<ol>
+<li><strong><code>sht4x_write_cmd(const uint8_t* cmd)</code>:</strong> This function writes a command to the sensor.</li>
+</ol>
+<pre><code class="language-cpp">    static int16_t sht4x_write_cmd(const uint8_t* cmd) {
+        return i2c_write(I2C1, SHT4X_ADDRESS, cmd, 1);
+    }
+</code></pre>
+<p>These functions provide the necessary groundwork for interacting with the SHT40 sensor via the I2C protocol. Once implemented, we can proceed with initializing the sensor and configuring it according to our project requirements.</p>
+<h2 id="key-details-about-the-sht40-sensor">Key Details about the SHT40 Sensor</h2>
+<h4 id="i2c-communication">I2C Communication:</h4>
+<ul>
+<li><strong>Specification:</strong> Based on NXP’s I2C-bus specification.</li>
+<li><strong>Supported Modes:</strong> Standard, fast mode, and fast mode plus.</li>
+<li><strong>Data Transfer:</strong> Transferred in multiples of 16-bit words with an 8-bit checksum (CRC).</li>
+<li><strong>Addressing:</strong> 7-bit I2C address followed by an eighth bit, denoting communication direction.</li>
+<li><strong>Documentation:</strong> <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">SHT40 Documentation</a></li>
+</ul>
+<h4 id="data-type-length">Data Type &amp; Length:</h4>
+<ul>
+<li><strong>Operates with:</strong> 8-bit data packages.</li>
+<li><strong>Checksum:</strong> Included after every second 8-bit data package.</li>
+<li><strong>Transmission:</strong> Humidity and temperature data transmitted in a specific format.</li>
+</ul>
+<h4 id="checksum-calculation">Checksum Calculation:</h4>
+<ul>
+<li><strong>For Read Transfers:</strong> Each 16-bit data is followed by a checksum using CRC-8 algorithm.</li>
+</ul>
+<h4 id="command-overview">Command Overview:</h4>
+<ul>
+<li><strong>Various Commands:</strong> Available for different operations like measuring temperature and humidity, reading serial number, etc.</li>
+</ul>
+<p>Refer to the <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">documentation</a> for detailed specifications and usage instructions.</p>
+<h2 id="sensor-initialization">Sensor Initialization</h2>
+<p>To use the SHT40 sensor, we need to initialize the I2C communication and configure the sensor. For initialization, we first read the serial number to ensure that the sensor is connected and functioning properly. The process involves detecting if a sensor is connected by reading out the ID register. If the sensor does not answer or if the answer is not the expected value, the test fails.</p>
+<pre><code class="language-cpp">/**
+ * Detects if a sensor is connected by reading out the ID register. If the sensor does not answer
+ * or if the answer is not the expected value, the test fails.
+ *
+ * @return 0 if a sensor was detected
+ */
+int16_t sht4x_probe(void);
+
+int16_t sht4x_probe(void) {
+    uint32_t serial;
+    return sht4x_read_serial(&amp;serial);
+}
+
+</code></pre>
+<pre><code class="language-cpp">// Internal function to retrieve the number of words divided by the word size (2 bytes)
+#define SENSIRION_WORD_SIZE 2
+#define SENSIRION_NUM_WORDS(x) (sizeof(x) / SENSIRION_WORD_SIZE)
+
+// Duration necessary to write command
+#define SHT4X_CMD_DURATION_USEC 
+
+int16_t sht4x_read_serial(uint32_t* serial) {
+    const uint8_t cmd = SHT4X_CMD_READ_SERIAL;
+    int16_t ret;
+    uint16_t serial_words[SENSIRION_NUM_WORDS(*serial)];
+    ret = write_cmd(&amp;sht4x_cmd_measure);
+    if (ret)
+        return ret;
+    read_n((uint8_t*)serial_words,sizeof(serial_words));
+    *serial = ((uint32_t)serial_words[0] &lt;&lt; 16) | serial_words[1];
+    return I2C_OK;
+}
+
+</code></pre>
+<h2 id="task-one">Task One</h2>
+<p>After initialization, we can now retrieve the temperature and humidity data. To do this, we need to create a function that allows us to read the temperature and humidity. Below is the function we developed:</p>
+<pre><code class="language-cpp">int16_t sht4x_measure_blocking_read(float* temperature, float* humidity) {
+    int16_t ret;
+    ret = write_cmd(&amp;sht4x_cmd_measure);
+    if (ret)
+        return ret;
+    delay_us(sht4x_cmd_measure_delay_us);
+    return sht4x_read_measurement(temperature, humidity);
+}
+
+</code></pre>
+<h4 id="function-explanation">Function Explanation</h4>
+<p>To read the temperature, we start by writing a command. After this, we can read the data. Similar to other sensors where a register pointer is used, we first send a write header to the I2C slave followed by a command. For example, "measure RH&amp;T with highest precision." After the measurement is finished, the read request directed to the I2C slave will be acknowledged, and the transmission of data will be started by the slave.</p>
+<h4 id="here-is-an-image-explaining-the-process">Here is an image explaining the process:</h4>
+<p><img src="/images/write.png" alt="Grove SHT40" width="1000"></p>
+<p>After sending the command, we can read the temperature and humidity. We need to use a formula to convert each value correctly. Refer to the documentation <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">SHT40 Documentation</a> for more details.</p>
+<pre><code class="language-cpp">
+int16_t sht4x_read_measurement(float* temperature, float* humidity) {
+    uint16_t rawTemp, rawHumd;
+    uint16_t words[2];
+    int16_t ret = read_n(words,SENSIRION_NUM_WORDS(words));
+    if (ret)
+        return ret;
+    /**
+     * formulas for conversion of the sensor signals, optimized for fixed point
+     * algebra:
+     * Temperature = 175 * S_T / 65535 - 45
+     * Relative Humidity = 125 * (S_RH / 65535) - 6
+     */
+
+    rawTemp = ((uint16_t) words[0] &lt;&lt; 8) | words[1];
+    rawHumd = ((uint16_t) words[2] &lt;&lt; 8) | words[3];
+
+    *temperature = (-45.0f + 175.0f * (rawTemp / 65535.0f));
+    *humidity = (-6.0f + 125.0f * (rawHumd / 65535.0f)); 
+
+    return ret;
+}
+
+</code></pre>
+<h2 id="task-two">Task Two</h2>
+<p>Great, now we can test if this works well. We need to use serial UART ST-LINK to display the current temperature and humidity in the terminal. Here is a test where we define main.c. We will do the first test by adding some code to transform a float into two parts: the integer part and the decimal part.</p>
+<pre><code class="language-cpp">
+#include &quot;libshield/sht4x.h&quot;
+#define delay_us(us)        timer_wait_us(_TIM3, us)
+
+
+static void on_command_received(char c) {
+    command = c;
+}
+
+int main(void) {
+    uart_init(_USART2, 115200, UART_8N1, on_command_received);
+    i2c_master_init(_I2C1);
+    while (sht4x_probe() != 0) {
+        uart_printf(UART_TO_USE, &quot;SHT sensor probing failed\n&quot;);
+        delay_us(1000);  // Sleep 1s
+    }
+
+    while (1) {
+                float temperature, humidity;
+                int8_t ret = sht4x_measure_blocking_read(&amp;temperature, &amp;humidity);
+                if (ret == 0) {
+                    int temp_int = (int) temperature;
+                    float temp_frac = temperature - temp_int;
+                    int hum_int = (int) humidity;
+                    float hum_frac = humidity - hum_int;
+
+                    int temp_int_frac = (int)(temp_frac * 1000);
+                    int hum_int_frac = (int)(hum_frac * 1000);
+
+                    uart_printf(UART_TO_USE, &quot;\r\ntemperature: %d.%d C&quot;, temp_int, temp_int_frac);
+                    uart_printf(UART_TO_USE, &quot;\r\nhumidity: %d.%d&quot;, hum_int, hum_int_frac);
+
+                    delay_us(1000);  // Sleep 1s
+
+                } else {
+                    uart_printf(UART_TO_USE, &quot;\r\nError reading measurement&quot;);
+                }
+                break;
+    }
+    return 0;
+}
+
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>In this section, we include the essential details about the SHT40 sensor, its basic functionalities, and how to interface it with a microcontroller to read and display temperature and humidity values using UART. We also provide a sample code implementation for initializing the sensor, reading data, and handling errors. After this, we will add more extra features and improvements to enhance the functionality and reliability of the system.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
