@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://Eljily-Mohamed.github.io/project_emb_docs/Test/">
+        <link rel="canonical" href="https://Eljily-Mohamed.github.io/project_emb_docs/Wireless/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Test - Emb Docs</title>
+        <title>Wireless Connection - Emb Docs</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -47,10 +47,10 @@
                                 <a href="../TCS3414CS_SENSOR/" class="nav-link">TCS34725CS SENSOR</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Test</a>
+                                <a href="../Test/" class="nav-link">Test</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../Wireless/" class="nav-link">Wireless Connection</a>
+                                <a href="./" class="nav-link active" aria-current="page">Wireless Connection</a>
                             </li>
                         </ul>
 
@@ -61,12 +61,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../TCS3414CS_SENSOR/" class="nav-link">
+                                <a rel="prev" href="../Test/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Wireless/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -88,24 +88,30 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#test" class="nav-link">Test</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#microcontroleur" class="nav-link">Microcontroleur</a>
+            <li class="nav-item" data-bs-level="1"><a href="#wireless-connection" class="nav-link">Wireless Connection</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#ihm" class="nav-link">IHM</a>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#zigbee" class="nav-link">Zigbee</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#uart1-configuration-steps" class="nav-link">UART1 Configuration Steps</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#getting-started" class="nav-link">🚀 Getting Started</a>
+            <li class="nav-item" data-bs-level="2"><a href="#uart1-initialization-and-callback" class="nav-link">UART1 Initialization and Callback</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#utilisation" class="nav-link">🔧 Utilisation</a>
+            <li class="nav-item" data-bs-level="2"><a href="#test" class="nav-link">Test</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bluetooth-low-energy-ble" class="nav-link">Bluetooth Low Energy (BLE)</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -113,54 +119,92 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="test">Test</h1>
-<h2 id="microcontroleur"><strong>Microcontroleur</strong></h2>
-<h4 id="prerequisites">Prerequisites</h4>
-<p>Before cloning and testing the project, ensure that you have the following prerequisites installed:
- <strong>ENIB Kit</strong>: You need to install the ENIB kit from <a href="https://git.enib.fr/bald/mip_install/-/tree/main/fichiers?ref_type=heads">here</a> to use certain features of the project.</p>
-<h4 id="cloning-and-testing-our-project">Cloning and Testing Our Project</h4>
-<p>To clone and test our project, follow these steps:
-1-<strong>Clone the Repository</strong>: Open your terminal or command prompt and run the following command to clone the repository to your local machine:</p>
-<pre><code class="language-bash">git clone https://github.com/Eljily-Mohamed/Projet-Emb.git
+<h1 id="wireless-connection">Wireless Connection</h1>
+<h1 id="zigbee">Zigbee</h1>
+<p>Zigbee is a wireless communication protocol designed for low-power, low-data-rate applications. It operates on the IEEE 802.15.4 standard and is commonly used in home automation, industrial control, and sensor networks. Zigbee networks can support hundreds of devices, making it suitable for applications requiring long battery life and reliable communication over short to medium distances.</p>
+<h2 id="uart1-configuration-steps">UART1 Configuration Steps</h2>
+<p>To configure UART1 in the .config file and define different pins and GPIO configurations:</p>
+<pre><code class="language-cpp">
+  // USART1
+#define USE_USART1
+#define USART1_GPIO_PORT    _GPIOB
+#define USART1_GPIO_PINS    PIN_3
+#define USART1_GPIO_CFG     PIN_MODE_ALTFUNC | PIN_OPT_AF7
+
+// USART2
+#define USE_USART2
+#define USART2_GPIO_PORT    _GPIOA
+#define USART2_GPIO_PINS    PIN_2 | PIN_3 | PIN_9
+#define USART2_GPIO_CFG     PIN_MODE_ALTFUNC | PIN_OPT_AF7
+
 </code></pre>
-<p>2-<strong>Navigate to Project Directory</strong>: Change your current directory to the project directory by running:</p>
-<pre><code class="language-bash">cd Projet-Emb
+<p>For more details, check the documentation, and you need to be familiar with using the ENIB Kit for Embedded Systems</p>
+<h2 id="uart1-initialization-and-callback">UART1 Initialization and Callback</h2>
+<pre><code class="language-cpp">
+  int uart_init(USART_t *u, uint32_t baud, uint32_t mode, OnUartRx cb)
+{
+    IRQn_t irq_number;
+    uint32_t irq_priority;
+
+    if (u == _USART1) {
+#ifdef USE_USART1
+        // Enable USART clocking
+        _RCC-&gt;APB2ENR |= (1 &lt;&lt; 4); 
+        // Configure Tx/Rx pins
+        io_configure(USART1_GPIO_PORT, USART1_GPIO_PINS, USART1_GPIO_CFG, NULL);
+        usart1_cb = cb;
+        irq_number = USART1_IRQn;
+        irq_priority = USART1_IRQ_PRIORITY;
+        // Configure USART speed
+        u-&gt;BRR = sysclks.apb2_freq / baud;
+#else
+        return -1; // USART1 not enabled
+#endif
+    }
+
+    /*Reset usart conf */
+    u-&gt;CR1&amp;=~(1&lt;&lt;12); //nb de bit par data raz
+    u-&gt;CR1&amp;=~(7&lt;&lt;8);  //parité raz
+    u-&gt;CR2&amp;=~(3&lt;&lt;12); //bit stop
+
+    u-&gt;GTPR = 0;
+    u-&gt;CR3 = 0;
+    /*conf à partir mode */
+    /*  mode = b10-b9-b8-x-x-b5-b4-x-x-x-b0
+        b0 = 8/9 bits dans CR1 b12
+        b5/b4 = nb bit stop dans CR2 b13/b12
+        b10/b9/b8 = parité , 10 controle parité (1 activé/0 désactivé), 9 type parité (Odd/Even) , 8 PEIE parity Error interrupt enable
+    */
+        u-&gt;CR1 |=((mode &amp; 0x1)&lt;&lt;12) | (mode &amp; 0x700) | (3&lt;&lt;2) | (1&lt;&lt;13);  //conf + tx/rx activé + usart enable
+        u-&gt;CR2 |=((mode &amp; 0x30)&lt;&lt;8); //bit stop positionné en b12/b13 de CR2
+
+        // Setup NVIC
+        if (cb) {
+            /* A COMPLETER */
+            NVIC_SetPriority(irq_number, irq_priority);
+            NVIC_EnableIRQ(irq_number);
+            u-&gt;CR1 |= (1&lt;&lt;5);// Receiver Not Empty Interrupt Enable
+
+        }
+}
+
 </code></pre>
-<p>3-<strong>Make the Project</strong>:you can use the make command to build the project. Run:</p>
-<pre><code class="language-bash">make
+<h2 id="test">Test</h2>
+<p>In the main file, we need to add a callback function to handle communication via Zigbee:</p>
+<pre><code class="language-cpp">
+static void on_zigbee_command_received(char c) {
+    command = c;
+    uart_printf(UART_TO_USE, &quot;\r\nZigbee command received: %c\r\n&quot;, c);
+}
+
+// Initialization required
+uart_init(_USART2, 115200, UART_8N1, on_command_received);
+uart_init(_USART1, 115200, UART_8N1, on_zigbee_command_received);
+
 </code></pre>
-<p>4- <strong>Launch the Debug File</strong> : You need to launch the debug file. Use the following command to debug the main.elf file Run:</p>
-<pre><code class="language-bash">dbg main.elf
-</code></pre>
-<p>5- <strong>Test with st-link</strong> : You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:</p>
-<pre><code class="language-bash">minicom -D /dev/ttyACM0 -b 115200
-</code></pre>
-<p>6- <strong>Get Temperature and Humidity</strong> :  After starting minicom, to get the temperature and humidity, type the command:</p>
-<pre><code class="language-bash">commande = t
-</code></pre>
-<p>7- <strong>Get color Infos</strong> : After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:</p>
-<pre><code class="language-bash">commande = c
-</code></pre>
-<p>Following this guide, you should be able to successfully clone, build, and test our microcontroller project</p>
-<h2 id="ihm"><strong>IHM</strong></h2>
-<h2 id="getting-started">🚀 Getting Started</h2>
-<p>Ces instructions vous permettront d'obtenir une copie du projet en cours d'exécution sur votre machine locale à des fins de développement et de test.</p>
-<h3 id="prerequis">Prérequis</h3>
-<p>Avant de commencer, assurez-vous d'avoir Node.js et npm installés sur votre machine.</p>
-<h3 id="installation">Installation</h3>
-<p>Clonez ce dépôt GitHub sur votre machine locale en utilisant la commande suivante :</p>
-<pre><code class="language-bash">git clone https://github.com/Eljily-Mohamed/emb-projet-ihm.git
-</code></pre>
-<p>Accédez au répertoire nouvellement créé :</p>
-<pre><code class="language-bash">cd emb-projet-ihm
-</code></pre>
-<p>Installez les dépendances en exécutant la commande suivante :</p>
-<pre><code class="language-bash">npm install
-</code></pre>
-<h2 id="utilisation">🔧 Utilisation</h2>
-<p>Pour lancer l'application, exécutez la commande suivante :</p>
-<pre><code class="language-bash">npm run electron-dev
-</code></pre></div>
+<p>Now that we have completed these steps, we can verify if everything functions correctly by conducting the same test mentioned in the section above, but using the 'tty/USB0' port.</p>
+<h1 id="bluetooth-low-energy-ble">Bluetooth Low Energy (BLE)</h1>
+<p>Typing ....</p></div>
             </div>
         </div>
 
