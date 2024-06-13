@@ -1,5 +1,5 @@
 # TCS34725CS SENSOR
-<img src="./images/tcs3414cs.jpg" alt="Grove TCS34725CS" width="400"></br>
+<img src="/assests//images/tcs3414cs.jpg" alt="Grove TCS34725CS" width="400"></br>
 This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove The TCS34725CS color sensor.
 
 ## Hardware Components
@@ -283,7 +283,7 @@ Temperature in Kelvin: 5500
 
 #### Verification
 We can verify if the x, y coordinates and the lux values are correct by using a CIE 1931 xy to CCT calculator. Here is an example showing the process:
-<img src="/images/test.png" alt="Grove TCS34725CS" width="400"></br>
+<img src="/assests//images/test.png" alt="Grove TCS34725CS" width="400"></br>
 
 For more information on the CIE 1931 xy to CCT formula and how to use it, you can refer to this ([link](https://www.waveformlighting.com/tech/calculate-color-temperature-cct-from-cie-1931-xy-coordinates))
 

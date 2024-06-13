@@ -1,5 +1,5 @@
 # SHT40 SENSOR
-<img src="/images/grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
+<img src="/assests//images/grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
 This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove SHT40 Temperature and Humidity Sensor.
 
 ## Hardware Components
