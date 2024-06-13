@@ -28,6 +28,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -55,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,9 +84,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -107,8 +113,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -159,6 +165,102 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Project Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  IHM System Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SHT40%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  SHT40 SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TCS3414CS%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  TCS34725CS SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Test/" class="md-tabs__link">
+        
+  
+    
+  
+  Test
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -172,8 +274,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -451,19 +555,19 @@
                   
 
 
-<h1 id="ihm-system-overview">IHM System Overview</h1>
+<h1 id="ihm-system-overview">IHM System Overview<a class="headerlink" href="#ihm-system-overview" title="Permanent link">&para;</a></h1>
 <p>This document provides an overview of the IHM (Interface Homme-Machine) system we built using Electron.js. The IHM is designed to interact with an STM32 microcontroller, facilitating data communication and display via a user-friendly interface. The system consists of a browser-side application built with React.js and Tailwind CSS, and a server-side application built with Node.js to manage the database and handle serial communication using Socket.io.</p>
-<h2 id="architecture">Architecture</h2>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <p>The IHM system is composed of the following components:</p>
 <ol>
 <li><strong>Browser-Side Application</strong>: Built with React.js and styled with Tailwind CSS.</li>
 <li><strong>Server-Side Application</strong>: Built with Node.js, manages the database, and handles serial communication with the STM32 microcontroller.</li>
 <li><strong>Electron.js</strong>: Wraps the browser-side application to create a cross-platform desktop application.</li>
 </ol>
-<h3 id="browser-side-application">Browser-Side Application</h3>
+<h3 id="browser-side-application">Browser-Side Application<a class="headerlink" href="#browser-side-application" title="Permanent link">&para;</a></h3>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="react" width="150" height="150">
 <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" alt="tailwind-css" width="150" height="150"></p>
-<h3 id="server-side-application">Server-Side Application</h3>
+<h3 id="server-side-application">Server-Side Application<a class="headerlink" href="#server-side-application" title="Permanent link">&para;</a></h3>
 <p>The server-side application is built using Node.js and handles the following tasks:</p>
 <ol>
 <li><strong>Database Management</strong>: Manages the storage and retrieval of sensor data in a database (sqlite3).</li>
@@ -473,7 +577,7 @@
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="node js" width="150" height="150">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" alt="SQLite3" width="150" height="150">
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg" alt="socket js" width="150" height="150"></p>
-<h2 id="features">Features</h2>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>User Interface</strong>: Provides a user-friendly interface to display temperature and humidity data received from the STM32 microcontroller.</li>
 <li><strong>Real-Time Updates</strong>: Uses Socket.io to receive real-time data updates from the server and display them in the UI.</li>
@@ -498,6 +602,12 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -525,7 +635,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "header.autohide", "instant"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>

@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -53,7 +56,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,9 +82,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -105,8 +111,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -157,6 +163,102 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Project Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IHM/" class="md-tabs__link">
+        
+  
+    
+  
+  IHM System Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SHT40%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  SHT40 SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TCS3414CS%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  TCS34725CS SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Test
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -170,8 +272,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -327,36 +431,36 @@
                   
 
 
-<h1 id="test">Test</h1>
-<h1 id="microcontroleur"><strong>Microcontroleur</strong></h1>
-<h4 id="prerequisites">Prerequisites</h4>
+<h1 id="test">Test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h1>
+<h1 id="microcontroleur"><strong>Microcontroleur</strong><a class="headerlink" href="#microcontroleur" title="Permanent link">&para;</a></h1>
+<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h4>
 <p>Before cloning and testing the project, ensure that you have the following prerequisites installed:</p>
 <p><strong>ENIB Kit</strong>: You need to install the ENIB kit from <a href="https://git.enib.fr/bald/mip_install/-/tree/main/fichiers?ref_type=heads">here</a> to use certain features of the project.</p>
-<h4 id="cloning-and-testing-our-project">Cloning and Testing Our Project</h4>
+<h4 id="cloning-and-testing-our-project">Cloning and Testing Our Project<a class="headerlink" href="#cloning-and-testing-our-project" title="Permanent link">&para;</a></h4>
 <p>To clone and test our project, follow these steps:</p>
-<p>1-<strong>Clone the Repository</strong>: Open your terminal or command prompt and run the following command to clone the repository to your local machine:</p>
-<pre><code class="language-bash">git clone https://github.com/Eljily-Mohamed/Projet-Emb.git
-</code></pre>
-<p>2-<strong>Navigate to Project Directory</strong>: Change your current directory to the project directory by running:</p>
-<pre><code class="language-bash">cd Projet-Emb
-</code></pre>
-<p>3-<strong>Make the Project</strong>:you can use the make command to build the project. Run:</p>
-<pre><code class="language-bash">make
-</code></pre>
-<p>4- **Launch the Debug File : ** You need to launch the debug file. Use the following command to debug the main.elf file Run:</p>
-<pre><code class="language-bash">dbg main.elf
-</code></pre>
-<p>5- **Test with st-link : ** You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:</p>
-<pre><code class="language-bash">minicom -D /dev/ttyACM0 -b 115200
-</code></pre>
-<p>6- **Get Temperature and Humidity : ** After starting minicom, to get the temperature and humidity, type the command:</p>
-<pre><code class="language-bash">commande = t
-</code></pre>
-<p>7- **Get color Infos : ** After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:</p>
-<pre><code class="language-bash">commande = c
-</code></pre>
-<p>Following this guide, you should be able to successfully clone, build, and test our microcontroller project</p>
-<h1 id="ihm"><strong>IHM</strong></h1>
+<p>1-<strong>Clone the Repository</strong>: Open your terminal or command prompt and run the following command to clone the repository to your local machine:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Eljily-Mohamed/Projet-Emb.git
+</code></pre></div>
+2-<strong>Navigate to Project Directory</strong>: Change your current directory to the project directory by running:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>Projet-Emb
+</code></pre></div>
+3-<strong>Make the Project</strong>:you can use the make command to build the project. Run:
+<div class="highlight"><pre><span></span><code>make
+</code></pre></div>
+4- <strong>Launch the Debug File</strong> : You need to launch the debug file. Use the following command to debug the main.elf file Run:
+<div class="highlight"><pre><span></span><code>dbg<span class="w"> </span>main.elf
+</code></pre></div>
+5- <strong>Test with st-link</strong> : You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:
+<div class="highlight"><pre><span></span><code>minicom<span class="w"> </span>-D<span class="w"> </span>/dev/ttyACM0<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span>
+</code></pre></div>
+6- <strong>Get Temperature and Humidity</strong> :  After starting minicom, to get the temperature and humidity, type the command:
+<div class="highlight"><pre><span></span><code><span class="nv">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>t
+</code></pre></div>
+7- <strong>Get color Infos</strong> : After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:
+<div class="highlight"><pre><span></span><code><span class="nv">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>c
+</code></pre></div>
+Following this guide, you should be able to successfully clone, build, and test our microcontroller project</p>
+<h1 id="ihm"><strong>IHM</strong><a class="headerlink" href="#ihm" title="Permanent link">&para;</a></h1>
 
 
 
@@ -376,6 +480,12 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -403,7 +513,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "header.autohide", "instant"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>

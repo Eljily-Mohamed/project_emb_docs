@@ -2,3 +2,40 @@ site_name: My Docs
 site_url: https://Eljily-Mohamed.github.io/project_emb_docs/
 theme:
   name: material
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.top
+    - header.autohide
+    - instant
+
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+      use_pygments: 
+      pygments_style: monokai 
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.extra
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.smartsymbols

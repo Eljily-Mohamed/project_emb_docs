@@ -26,19 +26,19 @@ cd Projet-Emb
 ```bash
 make
 ```
-4- **Launch the Debug File : ** You need to launch the debug file. Use the following command to debug the main.elf file Run:
+4- **Launch the Debug File** : You need to launch the debug file. Use the following command to debug the main.elf file Run:
 ```bash
 dbg main.elf
 ```
-5- **Test with st-link : ** You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:
+5- **Test with st-link** : You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:
 ```bash
 minicom -D /dev/ttyACM0 -b 115200
 ```
-6- **Get Temperature and Humidity : ** After starting minicom, to get the temperature and humidity, type the command:
+6- **Get Temperature and Humidity** :  After starting minicom, to get the temperature and humidity, type the command:
 ```bash
 commande = t
 ```
-7- **Get color Infos : ** After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:
+7- **Get color Infos** : After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:
 ```bash
 commande = c
 ```
