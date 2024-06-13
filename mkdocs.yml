@@ -18,8 +18,8 @@ theme:
 markdown_extensions:
   - codehilite:
       guess_lang: false
-      use_pygments: 
-      pygments_style: monokai 
+      use_pygments: false
+      pygments_style: monokai
   - admonition
   - toc:
       permalink: true

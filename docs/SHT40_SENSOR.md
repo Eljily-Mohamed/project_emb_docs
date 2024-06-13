@@ -1,5 +1,5 @@
 # SHT40 SENSOR
-<img src="/assests//images/grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
+<img src="grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
 This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove SHT40 Temperature and Humidity Sensor.
 
 ## Hardware Components
@@ -211,7 +211,7 @@ To read the temperature, we start by writing a command. After this, we can read 
 
 ####Here is an image explaining the process:
 
-<img src="/images/write.png" alt="Grove SHT40" width="1000">
+<img src="write.png" alt="Grove SHT40" width="1000">
 
 After sending the command, we can read the temperature and humidity. We need to use a formula to convert each value correctly. Refer to the documentation [SHT40 Documentation](https://wiki.seeedstudio.com/Grove-SHT4x/) for more details.
 

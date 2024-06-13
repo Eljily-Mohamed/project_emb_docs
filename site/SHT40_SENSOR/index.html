@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://Eljily-Mohamed.github.io/project_emb_docs/SHT40%20SENSOR/">
+        <link rel="canonical" href="https://Eljily-Mohamed.github.io/project_emb_docs/SHT40_SENSOR/">
       
       
         <link rel="prev" href="../IHM/">
       
       
-        <link rel="next" href="../TCS3414CS%20SENSOR/">
+        <link rel="next" href="../TCS3414CS_SENSOR/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -228,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../TCS3414CS%20SENSOR/" class="md-tabs__link">
+      <a href="../TCS3414CS_SENSOR/" class="md-tabs__link">
         
   
     
@@ -559,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TCS3414CS%20SENSOR/" class="md-nav__link">
+      <a href="../TCS3414CS_SENSOR/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -796,7 +796,7 @@
 
 
 <h1 id="sht40-sensor">SHT40 SENSOR<a class="headerlink" href="#sht40-sensor" title="Permanent link">&para;</a></h1>
-<p><img src="/assests//images/grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
+<p><img src="grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
 This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove SHT40 Temperature and Humidity Sensor.</p>
 <h2 id="hardware-components">Hardware Components<a class="headerlink" href="#hardware-components" title="Permanent link">&para;</a></h2>
 <h4 id="microcontroller-development-kit">Microcontroller Development Kit<a class="headerlink" href="#microcontroller-development-kit" title="Permanent link">&para;</a></h4>
@@ -962,7 +962,7 @@ This section provides a detailed explanation of the embedded system aspect of ou
 <h4 id="function-explanation">Function Explanation<a class="headerlink" href="#function-explanation" title="Permanent link">&para;</a></h4>
 <p>To read the temperature, we start by writing a command. After this, we can read the data. Similar to other sensors where a register pointer is used, we first send a write header to the I2C slave followed by a command. For example, "measure RH&amp;T with highest precision." After the measurement is finished, the read request directed to the I2C slave will be acknowledged, and the transmission of data will be started by the slave.</p>
 <h4 id="here-is-an-image-explaining-the-process">Here is an image explaining the process:<a class="headerlink" href="#here-is-an-image-explaining-the-process" title="Permanent link">&para;</a></h4>
-<p><img src="/images/write.png" alt="Grove SHT40" width="1000"></p>
+<p><img src="write.png" alt="Grove SHT40" width="1000"></p>
 <p>After sending the command, we can read the temperature and humidity. We need to use a formula to convert each value correctly. Refer to the documentation <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">SHT40 Documentation</a> for more details.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_read_measurement</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">humidity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">rawTemp</span><span class="p">,</span><span class="w"> </span><span class="n">rawHumd</span><span class="p">;</span>
