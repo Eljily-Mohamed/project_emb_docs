@@ -1,4 +1,5 @@
 # SHT40 SENSOR
+
 <img src="grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
 This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove SHT40 Temperature and Humidity Sensor.
 
@@ -6,12 +7,12 @@ This section provides a detailed explanation of the embedded system aspect of ou
 
 #### Microcontroller Development Kit
 
-We utilize an STM32 microcontroller development kit to build and debug code for the card. This development kit, provided by the ENIB internal pack we use in our course ([SDK pack](https://git.enib.fr/bald/mip_install/-/tree/main/fichiers?ref_type=heads)), allows us to efficiently develop and debug firmware for the embedded system.
+We utilize an STM32 microcontroller development kit to build and debug code for our project. This development kit is provided by the ENIB internal pack used in our course (SDK pack), enabling efficient development and debugging of firmware for the embedded system.
 
 
 ## Software Implementation
 
-Before we can utilize the SHT40 sensor, it's crucial to establish communication with it using the I2C protocol and configure it with the appropriate settings. To achieve this, we need to implement basic functions that facilitate communication with the sensor. These functions serve as the foundation for all subsequent interactions with the sensor. 
+Before we can utilize the SHT40 sensor, it is crucial to establish communication with it using the I2C protocol and configure it with the appropriate settings. To achieve this, we need to implement basic functions that facilitate communication with the sensor. These functions serve as the foundation for all subsequent interactions with the sensor.
 
 ## Project Structure
 
@@ -149,7 +150,7 @@ Refer to the [documentation](https://wiki.seeedstudio.com/Grove-SHT4x/) for deta
 
 ## Sensor Initialization
 
-To use the SHT40 sensor, we need to initialize the I2C communication and configure the sensor. For initialization, we first read the serial number to ensure that the sensor is connected and functioning properly. The process involves detecting if a sensor is connected by reading out the ID register. If the sensor does not answer or if the answer is not the expected value, the test fails.
+To use the SHT40 sensor, we need to initialize the I2C communication and configure the sensor. For initialization, we first read the serial number to ensure that the sensor is connected and functioning properly. The process involves detecting if a sensor is connected by reading the ID register. If the sensor does not respond or if the response is not the expected value, the test fails.
 
 ```cpp
 /**
