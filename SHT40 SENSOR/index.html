@@ -28,6 +28,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -55,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,9 +84,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -107,8 +113,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -159,6 +165,102 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Project Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../IHM/" class="md-tabs__link">
+        
+  
+    
+  
+  IHM System Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  SHT40 SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TCS3414CS%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  TCS34725CS SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Test/" class="md-tabs__link">
+        
+  
+    
+  
+  Test
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -172,8 +274,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -691,111 +795,103 @@
                   
 
 
-<h1 id="sht40-sensor">SHT40 SENSOR</h1>
+<h1 id="sht40-sensor">SHT40 SENSOR<a class="headerlink" href="#sht40-sensor" title="Permanent link">&para;</a></h1>
 <p><img src="/images/grove_sht40.jpeg" alt="Grove SHT40" width="400"></br>
 This section provides a detailed explanation of the embedded system aspect of our project, focusing specifically on the Grove SHT40 Temperature and Humidity Sensor.</p>
-<h2 id="hardware-components">Hardware Components</h2>
-<h4 id="microcontroller-development-kit">Microcontroller Development Kit</h4>
+<h2 id="hardware-components">Hardware Components<a class="headerlink" href="#hardware-components" title="Permanent link">&para;</a></h2>
+<h4 id="microcontroller-development-kit">Microcontroller Development Kit<a class="headerlink" href="#microcontroller-development-kit" title="Permanent link">&para;</a></h4>
 <p>We utilize an STM32 microcontroller development kit to build and debug code for the card. This development kit, provided by the ENIB internal pack we use in our course (<a href="https://git.enib.fr/bald/mip_install/-/tree/main/fichiers?ref_type=heads">SDK pack</a>), allows us to efficiently develop and debug firmware for the embedded system.</p>
-<h2 id="software-implementation">Software Implementation</h2>
+<h2 id="software-implementation">Software Implementation<a class="headerlink" href="#software-implementation" title="Permanent link">&para;</a></h2>
 <p>Before we can utilize the SHT40 sensor, it's crucial to establish communication with it using the I2C protocol and configure it with the appropriate settings. To achieve this, we need to implement basic functions that facilitate communication with the sensor. These functions serve as the foundation for all subsequent interactions with the sensor. </p>
-<h2 id="project-structure">Project Structure</h2>
+<h2 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
 <p>To integrate the SHT40 sensor into our project, you'll need to follow these steps:</p>
 <ol>
 <li>Create the necessary files:</li>
 <li><code>sht40.h</code>: Header file for SHT40 sensor interface.</li>
 <li><code>sht40.c</code>: Source file for SHT40 sensor implementation.</li>
 </ol>
-<h2 id="essential-functions-for-sensor-communication">Essential Functions for Sensor Communication</h2>
+<h2 id="essential-functions-for-sensor-communication">Essential Functions for Sensor Communication<a class="headerlink" href="#essential-functions-for-sensor-communication" title="Permanent link">&para;</a></h2>
 <p>To interact with the SHT40 sensor, we implement the following fundamental functions:</p>
 <ol>
 <li><strong><code>sht4x_write(uint8_t reg, uint8_t value)</code>:</strong> This function writes a single byte of data to a specified register of the sensor..</li>
 </ol>
-<pre><code class="language-cpp">
-    static int16_t sht4x_write(uint8_t reg, uint8_t value) {
-        uint8_t data[2];
-        data[0] = reg;
-        data[1] = value &amp; 0xFF;
-        return i2c_write(I2C1, SHT4X_ADDRESS, data, sizeof(data));
-    }
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_write</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reg</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i2c_write</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <ol>
 <li><strong><code>read(uint8_t reg , int delay)</code>:</strong> This function reads a single byte of data from a specified register of the sensor.</li>
 </ol>
-<pre><code class="language-cpp">
-    static uint8_t sht4x_read(uint8_t reg, int delay) {
-        uint8_t value;
-        uint8_t reg_data[1] = {reg};
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">sht4x_read</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">delay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">reg</span><span class="p">};</span>
 
-        if (i2c_write(I2C1, SHT4X_ADDRESS, reg_data, 1) != I2C_OK) {
-            uart_puts(_USART2, &quot;\n\rErreur lors de l'écriture dans le registre\n&quot;);
-            return 0;
-        }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i2c_write</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">reg_data</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">I2C_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">_USART2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Erreur lors de l&#39;écriture dans le registre</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        delay_us(delay);
+<span class="w">        </span><span class="n">delay_us</span><span class="p">(</span><span class="n">delay</span><span class="p">);</span>
 
-        if (i2c_read(I2C1, SHT4X_ADDRESS, &amp;value, 1) != I2C_OK) {
-            uart_puts(_USART2, &quot;\n\rErreur lors de la lecture d'octets\n&quot;);
-            return 0;
-        }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i2c_read</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">I2C_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">_USART2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Erreur lors de la lecture d&#39;octets</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        return value;
-    }
-
-</code></pre>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <ol>
 <li><strong><code>write_n(uint8_t reg, uint8_t* values, uint8_t length)</code>:</strong> This function writes multiple bytes of data to consecutive registers of the sensor.</li>
 </ol>
-<pre><code class="language-cpp">
-    static int16_t sht4x_write_n(uint8_t reg, uint8_t* values, uint8_t length) {
-        uint8_t data[length + 1];
-        data[0] = reg;
-        for (size_t i = 0; i &lt; length; i++) {
-            data[i + 1] = values[i];
-        }
-        return i2c_write(I2C1, SHT4X_ADDRESS, data, sizeof(data));
-    }
-
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_write_n</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reg</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i2c_write</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <ol>
 <li><strong><code>read_n(uint8_t reg, uint8_t* values, uint8_t length, int delay)</code>:</strong> This function reads multiple bytes of data from consecutive registers of the sensor.</li>
 </ol>
-<pre><code class="language-cpp">
-    void read_n(uint8_t reg, uint8_t* values, uint8_t length, int delay) {
-        uint8_t reg_data[1] = {reg};
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">read_n</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">delay</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">reg</span><span class="p">};</span>
 
-        if (i2c_write(I2C1, SHT4X_ADDRESS, reg_data, 1) != I2C_OK) {
-            uart_puts(_USART2,&quot;\n\rErreur lors de l'écriture dans le registre\n&quot;);
-            return I2C_ERROR;
-        }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i2c_write</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">reg_data</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">I2C_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">_USART2</span><span class="p">,</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Erreur lors de l&#39;écriture dans le registre</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">I2C_ERROR</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        delay_us(delay);
+<span class="w">        </span><span class="n">delay_us</span><span class="p">(</span><span class="n">delay</span><span class="p">);</span>
 
-        if (i2c_read(I2C1, SHT4X_ADDRESS, values, length) != I2C_OK) {
-            uart_puts(_USART2,&quot;\n\rErreur lors de la lecture d'octets\n&quot;);
-            return;
-        }
-    }
-
-</code></pre>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i2c_read</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">I2C_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">uart_puts</span><span class="p">(</span><span class="n">_USART2</span><span class="p">,</span><span class="s">&quot;</span><span class="se">\n\r</span><span class="s">Erreur lors de la lecture d&#39;octets</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <ol>
 <li><strong><code>sht4x_write_cmd(const uint8_t* cmd)</code>:</strong> This function writes a command to the sensor.</li>
 </ol>
-<pre><code class="language-cpp">    static int16_t sht4x_write_cmd(const uint8_t* cmd) {
-        return i2c_write(I2C1, SHT4X_ADDRESS, cmd, 1);
-    }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_write_cmd</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">cmd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i2c_write</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <ol>
 <li><strong><code>sht4x_write_cmd(const uint8_t* cmd)</code>:</strong> This function writes a command to the sensor.</li>
 </ol>
-<pre><code class="language-cpp">    static int16_t sht4x_write_cmd(const uint8_t* cmd) {
-        return i2c_write(I2C1, SHT4X_ADDRESS, cmd, 1);
-    }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_write_cmd</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">cmd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i2c_write</span><span class="p">(</span><span class="n">I2C1</span><span class="p">,</span><span class="w"> </span><span class="n">SHT4X_ADDRESS</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
 <p>These functions provide the necessary groundwork for interacting with the SHT40 sensor via the I2C protocol. Once implemented, we can proceed with initializing the sensor and configuring it according to our project requirements.</p>
-<h2 id="key-details-about-the-sht40-sensor">Key Details about the SHT40 Sensor</h2>
-<h4 id="i2c-communication">I2C Communication:</h4>
+<h2 id="key-details-about-the-sht40-sensor">Key Details about the SHT40 Sensor<a class="headerlink" href="#key-details-about-the-sht40-sensor" title="Permanent link">&para;</a></h2>
+<h4 id="i2c-communication">I2C Communication:<a class="headerlink" href="#i2c-communication" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Specification:</strong> Based on NXP’s I2C-bus specification.</li>
 <li><strong>Supported Modes:</strong> Standard, fast mode, and fast mode plus.</li>
@@ -803,144 +899,137 @@ This section provides a detailed explanation of the embedded system aspect of ou
 <li><strong>Addressing:</strong> 7-bit I2C address followed by an eighth bit, denoting communication direction.</li>
 <li><strong>Documentation:</strong> <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">SHT40 Documentation</a></li>
 </ul>
-<h4 id="data-type-length">Data Type &amp; Length:</h4>
+<h4 id="data-type-length">Data Type &amp; Length:<a class="headerlink" href="#data-type-length" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Operates with:</strong> 8-bit data packages.</li>
 <li><strong>Checksum:</strong> Included after every second 8-bit data package.</li>
 <li><strong>Transmission:</strong> Humidity and temperature data transmitted in a specific format.</li>
 </ul>
-<h4 id="checksum-calculation">Checksum Calculation:</h4>
+<h4 id="checksum-calculation">Checksum Calculation:<a class="headerlink" href="#checksum-calculation" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>For Read Transfers:</strong> Each 16-bit data is followed by a checksum using CRC-8 algorithm.</li>
 </ul>
-<h4 id="command-overview">Command Overview:</h4>
+<h4 id="command-overview">Command Overview:<a class="headerlink" href="#command-overview" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Various Commands:</strong> Available for different operations like measuring temperature and humidity, reading serial number, etc.</li>
 </ul>
 <p>Refer to the <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">documentation</a> for detailed specifications and usage instructions.</p>
-<h2 id="sensor-initialization">Sensor Initialization</h2>
+<h2 id="sensor-initialization">Sensor Initialization<a class="headerlink" href="#sensor-initialization" title="Permanent link">&para;</a></h2>
 <p>To use the SHT40 sensor, we need to initialize the I2C communication and configure the sensor. For initialization, we first read the serial number to ensure that the sensor is connected and functioning properly. The process involves detecting if a sensor is connected by reading out the ID register. If the sensor does not answer or if the answer is not the expected value, the test fails.</p>
-<pre><code class="language-cpp">/**
- * Detects if a sensor is connected by reading out the ID register. If the sensor does not answer
- * or if the answer is not the expected value, the test fails.
- *
- * @return 0 if a sensor was detected
- */
-int16_t sht4x_probe(void);
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Detects if a sensor is connected by reading out the ID register. If the sensor does not answer</span>
+<span class="cm"> * or if the answer is not the expected value, the test fails.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @return 0 if a sensor was detected</span>
+<span class="cm"> */</span>
+<span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_probe</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 
-int16_t sht4x_probe(void) {
-    uint32_t serial;
-    return sht4x_read_serial(&amp;serial);
-}
+<span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_probe</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">serial</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sht4x_read_serial</span><span class="p">(</span><span class="o">&amp;</span><span class="n">serial</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Internal function to retrieve the number of words divided by the word size (2 bytes)</span>
+<span class="cp">#define SENSIRION_WORD_SIZE 2</span>
+<span class="cp">#define SENSIRION_NUM_WORDS(x) (sizeof(x) / SENSIRION_WORD_SIZE)</span>
 
-</code></pre>
-<pre><code class="language-cpp">// Internal function to retrieve the number of words divided by the word size (2 bytes)
-#define SENSIRION_WORD_SIZE 2
-#define SENSIRION_NUM_WORDS(x) (sizeof(x) / SENSIRION_WORD_SIZE)
+<span class="c1">// Duration necessary to write command</span>
+<span class="cp">#define SHT4X_CMD_DURATION_USEC </span>
 
-// Duration necessary to write command
-#define SHT4X_CMD_DURATION_USEC 
-
-int16_t sht4x_read_serial(uint32_t* serial) {
-    const uint8_t cmd = SHT4X_CMD_READ_SERIAL;
-    int16_t ret;
-    uint16_t serial_words[SENSIRION_NUM_WORDS(*serial)];
-    ret = write_cmd(&amp;sht4x_cmd_measure);
-    if (ret)
-        return ret;
-    read_n((uint8_t*)serial_words,sizeof(serial_words));
-    *serial = ((uint32_t)serial_words[0] &lt;&lt; 16) | serial_words[1];
-    return I2C_OK;
-}
-
-</code></pre>
-<h2 id="task-one">Task One</h2>
+<span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_read_serial</span><span class="p">(</span><span class="kt">uint32_t</span><span class="o">*</span><span class="w"> </span><span class="n">serial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SHT4X_CMD_READ_SERIAL</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">serial_words</span><span class="p">[</span><span class="n">SENSIRION_NUM_WORDS</span><span class="p">(</span><span class="o">*</span><span class="n">serial</span><span class="p">)];</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">write_cmd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sht4x_cmd_measure</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="n">read_n</span><span class="p">((</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">serial_words</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">serial_words</span><span class="p">));</span>
+<span class="w">    </span><span class="o">*</span><span class="n">serial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">uint32_t</span><span class="p">)</span><span class="n">serial_words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">serial_words</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">I2C_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="task-one">Task One<a class="headerlink" href="#task-one" title="Permanent link">&para;</a></h2>
 <p>After initialization, we can now retrieve the temperature and humidity data. To do this, we need to create a function that allows us to read the temperature and humidity. Below is the function we developed:</p>
-<pre><code class="language-cpp">int16_t sht4x_measure_blocking_read(float* temperature, float* humidity) {
-    int16_t ret;
-    ret = write_cmd(&amp;sht4x_cmd_measure);
-    if (ret)
-        return ret;
-    delay_us(sht4x_cmd_measure_delay_us);
-    return sht4x_read_measurement(temperature, humidity);
-}
-
-</code></pre>
-<h4 id="function-explanation">Function Explanation</h4>
+<div class="highlight"><pre><span></span><code><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_measure_blocking_read</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">humidity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">write_cmd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sht4x_cmd_measure</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="n">delay_us</span><span class="p">(</span><span class="n">sht4x_cmd_measure_delay_us</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sht4x_read_measurement</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="n">humidity</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="function-explanation">Function Explanation<a class="headerlink" href="#function-explanation" title="Permanent link">&para;</a></h4>
 <p>To read the temperature, we start by writing a command. After this, we can read the data. Similar to other sensors where a register pointer is used, we first send a write header to the I2C slave followed by a command. For example, "measure RH&amp;T with highest precision." After the measurement is finished, the read request directed to the I2C slave will be acknowledged, and the transmission of data will be started by the slave.</p>
-<h4 id="here-is-an-image-explaining-the-process">Here is an image explaining the process:</h4>
+<h4 id="here-is-an-image-explaining-the-process">Here is an image explaining the process:<a class="headerlink" href="#here-is-an-image-explaining-the-process" title="Permanent link">&para;</a></h4>
 <p><img src="/images/write.png" alt="Grove SHT40" width="1000"></p>
 <p>After sending the command, we can read the temperature and humidity. We need to use a formula to convert each value correctly. Refer to the documentation <a href="https://wiki.seeedstudio.com/Grove-SHT4x/">SHT40 Documentation</a> for more details.</p>
-<pre><code class="language-cpp">
-int16_t sht4x_read_measurement(float* temperature, float* humidity) {
-    uint16_t rawTemp, rawHumd;
-    uint16_t words[2];
-    int16_t ret = read_n(words,SENSIRION_NUM_WORDS(words));
-    if (ret)
-        return ret;
-    /**
-     * formulas for conversion of the sensor signals, optimized for fixed point
-     * algebra:
-     * Temperature = 175 * S_T / 65535 - 45
-     * Relative Humidity = 125 * (S_RH / 65535) - 6
-     */
+<div class="highlight"><pre><span></span><code><span class="kt">int16_t</span><span class="w"> </span><span class="nf">sht4x_read_measurement</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">humidity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">rawTemp</span><span class="p">,</span><span class="w"> </span><span class="n">rawHumd</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_n</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="n">SENSIRION_NUM_WORDS</span><span class="p">(</span><span class="n">words</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * formulas for conversion of the sensor signals, optimized for fixed point</span>
+<span class="cm">     * algebra:</span>
+<span class="cm">     * Temperature = 175 * S_T / 65535 - 45</span>
+<span class="cm">     * Relative Humidity = 125 * (S_RH / 65535) - 6</span>
+<span class="cm">     */</span>
 
-    rawTemp = ((uint16_t) words[0] &lt;&lt; 8) | words[1];
-    rawHumd = ((uint16_t) words[2] &lt;&lt; 8) | words[3];
+<span class="w">    </span><span class="n">rawTemp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">uint16_t</span><span class="p">)</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">    </span><span class="n">rawHumd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">uint16_t</span><span class="p">)</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
 
-    *temperature = (-45.0f + 175.0f * (rawTemp / 65535.0f));
-    *humidity = (-6.0f + 125.0f * (rawHumd / 65535.0f)); 
+<span class="w">    </span><span class="o">*</span><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">-45.0f</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">175.0f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">rawTemp</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">65535.0f</span><span class="p">));</span>
+<span class="w">    </span><span class="o">*</span><span class="n">humidity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">-6.0f</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">125.0f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">rawHumd</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">65535.0f</span><span class="p">));</span><span class="w"> </span>
 
-    return ret;
-}
-
-</code></pre>
-<h2 id="task-two">Task Two</h2>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="task-two">Task Two<a class="headerlink" href="#task-two" title="Permanent link">&para;</a></h2>
 <p>Great, now we can test if this works well. We need to use serial UART ST-LINK to display the current temperature and humidity in the terminal. Here is a test where we define main.c. We will do the first test by adding some code to transform a float into two parts: the integer part and the decimal part.</p>
-<pre><code class="language-cpp">
-#include &quot;libshield/sht4x.h&quot;
-#define delay_us(us)        timer_wait_us(_TIM3, us)
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;libshield/sht4x.h&quot;</span>
+<span class="cp">#define delay_us(us)        timer_wait_us(_TIM3, us)</span>
 
 
-static void on_command_received(char c) {
-    command = c;
-}
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">on_command_received</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
 
-int main(void) {
-    uart_init(_USART2, 115200, UART_8N1, on_command_received);
-    i2c_master_init(_I2C1);
-    while (sht4x_probe() != 0) {
-        uart_printf(UART_TO_USE, &quot;SHT sensor probing failed\n&quot;);
-        delay_us(1000);  // Sleep 1s
-    }
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">uart_init</span><span class="p">(</span><span class="n">_USART2</span><span class="p">,</span><span class="w"> </span><span class="mi">115200</span><span class="p">,</span><span class="w"> </span><span class="n">UART_8N1</span><span class="p">,</span><span class="w"> </span><span class="n">on_command_received</span><span class="p">);</span>
+<span class="w">    </span><span class="n">i2c_master_init</span><span class="p">(</span><span class="n">_I2C1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">sht4x_probe</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">uart_printf</span><span class="p">(</span><span class="n">UART_TO_USE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SHT sensor probing failed</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay_us</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">// Sleep 1s</span>
+<span class="w">    </span><span class="p">}</span>
 
-    while (1) {
-                float temperature, humidity;
-                int8_t ret = sht4x_measure_blocking_read(&amp;temperature, &amp;humidity);
-                if (ret == 0) {
-                    int temp_int = (int) temperature;
-                    float temp_frac = temperature - temp_int;
-                    int hum_int = (int) humidity;
-                    float hum_frac = humidity - hum_int;
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">float</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="n">humidity</span><span class="p">;</span>
+<span class="w">                </span><span class="kt">int8_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sht4x_measure_blocking_read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">humidity</span><span class="p">);</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp_int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">temperature</span><span class="p">;</span>
+<span class="w">                    </span><span class="kt">float</span><span class="w"> </span><span class="n">temp_frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temperature</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">temp_int</span><span class="p">;</span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">hum_int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">humidity</span><span class="p">;</span>
+<span class="w">                    </span><span class="kt">float</span><span class="w"> </span><span class="n">hum_frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">humidity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">hum_int</span><span class="p">;</span>
 
-                    int temp_int_frac = (int)(temp_frac * 1000);
-                    int hum_int_frac = (int)(hum_frac * 1000);
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp_int_frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">temp_frac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">hum_int_frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">hum_frac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
 
-                    uart_printf(UART_TO_USE, &quot;\r\ntemperature: %d.%d C&quot;, temp_int, temp_int_frac);
-                    uart_printf(UART_TO_USE, &quot;\r\nhumidity: %d.%d&quot;, hum_int, hum_int_frac);
+<span class="w">                    </span><span class="n">uart_printf</span><span class="p">(</span><span class="n">UART_TO_USE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\r\n</span><span class="s">temperature: %d.%d C&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">temp_int</span><span class="p">,</span><span class="w"> </span><span class="n">temp_int_frac</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">uart_printf</span><span class="p">(</span><span class="n">UART_TO_USE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\r\n</span><span class="s">humidity: %d.%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hum_int</span><span class="p">,</span><span class="w"> </span><span class="n">hum_int_frac</span><span class="p">);</span>
 
-                    delay_us(1000);  // Sleep 1s
+<span class="w">                    </span><span class="n">delay_us</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">// Sleep 1s</span>
 
-                } else {
-                    uart_printf(UART_TO_USE, &quot;\r\nError reading measurement&quot;);
-                }
-                break;
-    }
-    return 0;
-}
-
-</code></pre>
-<h2 id="summary">Summary</h2>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">uart_printf</span><span class="p">(</span><span class="n">UART_TO_USE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\r\n</span><span class="s">Error reading measurement&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>In this section, we include the essential details about the SHT40 sensor, its basic functionalities, and how to interface it with a microcontroller to read and display temperature and humidity values using UART. We also provide a sample code implementation for initializing the sensor, reading data, and handling errors. After this, we will add more extra features and improvements to enhance the functionality and reliability of the system.</p>
 
 
@@ -961,6 +1050,12 @@ int main(void) {
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -988,7 +1083,7 @@ int main(void) {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "header.autohide", "instant"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>

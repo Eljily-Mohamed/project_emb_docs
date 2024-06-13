@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="assets/stylesheets/main.6543a935.min.css">
       
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -53,7 +56,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,9 +82,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -105,8 +111,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -157,6 +163,102 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  Project Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="IHM/" class="md-tabs__link">
+        
+  
+    
+  
+  IHM System Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="SHT40%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  SHT40 SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="TCS3414CS%20SENSOR/" class="md-tabs__link">
+        
+  
+    
+  
+  TCS34725CS SENSOR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Test/" class="md-tabs__link">
+        
+  
+    
+  
+  Test
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -170,8 +272,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
@@ -467,20 +571,20 @@
                   
 
 
-<h1 id="project-homepage">Project Homepage</h1>
-<h2 id="welcome-to-our-project-homepage">Welcome to Our Project Homepage</h2>
+<h1 id="project-homepage">Project Homepage<a class="headerlink" href="#project-homepage" title="Permanent link">&para;</a></h1>
+<h2 id="welcome-to-our-project-homepage">Welcome to Our Project Homepage<a class="headerlink" href="#welcome-to-our-project-homepage" title="Permanent link">&para;</a></h2>
 <p>Welcome to the documentation of our embedded system project, developed by students at the École Nationale d'Ingénieurs de Brest (ENIB). Our project focuses on configuring and retrieving information from two sensors: a color sensor (I2C) and a temperature and humidity sensor.</p>
-<h2 id="project-overview">Project Overview</h2>
+<h2 id="project-overview">Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
 <p>In this project, we integrated two types of sensors to collect environmental data:</p>
 <ul>
 <li><strong>Color Sensor (I2C)</strong>: This sensor detects the color of objects and communicates the data via the I2C protocol.</li>
 <li><strong>Temperature and Humidity Sensor</strong>: This sensor measures ambient temperature and humidity levels.</li>
 </ul>
-<h2 id="sensors-used">Sensors Used</h2>
-<h3 id="grove-sht40-temperature-and-humidity-sensor">Grove - SHT40 Temperature and Humidity Sensor</h3>
+<h2 id="sensors-used">Sensors Used<a class="headerlink" href="#sensors-used" title="Permanent link">&para;</a></h2>
+<h3 id="grove-sht40-temperature-and-humidity-sensor">Grove - SHT40 Temperature and Humidity Sensor<a class="headerlink" href="#grove-sht40-temperature-and-humidity-sensor" title="Permanent link">&para;</a></h3>
 <p><img src="images/grove_sht40.jpeg" alt="Grove SHT40" width="300"></p>
 <p>The Grove SHT40 digital sensor is based on Sensirion's industry-proven humidity and temperature sensors. It provides constant temperature and humidity accuracy over an extensive measurement range.</p>
-<h3 id="grove-tcs34725cs-color-sensor">Grove - TCS34725CS Color Sensor</h3>
+<h3 id="grove-tcs34725cs-color-sensor">Grove - TCS34725CS Color Sensor<a class="headerlink" href="#grove-tcs34725cs-color-sensor" title="Permanent link">&para;</a></h3>
 <p><img src="images/tcs3414cs.jpg" alt="TCS3414CS Color Sensor" width="320"></p>
 <p>The TCS34725CS color sensor with digital I2C output is based on an 8x2 array of filtered photodiodes and 16-bit analog-to-digital converters. It measures the color chromaticity of ambient light or objects. Of the 16 photodiodes, 4 have red filters, 4 have green filters, 4 have blue filters, and 4 have no filter (clear). With the synchronization input pin, an external pulsed light source can provide precise synchronous conversion control.</p>
 
@@ -502,6 +606,12 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -529,7 +639,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "header.autohide", "instant"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>
