@@ -447,16 +447,16 @@
 3-<strong>Make the Project</strong>:you can use the make command to build the project. Run:
 <div class="highlight"><pre><span></span><code>make
 </code></pre></div>
-4- **Launch the Debug File : ** You need to launch the debug file. Use the following command to debug the main.elf file Run:
+4- <strong>Launch the Debug File</strong> : You need to launch the debug file. Use the following command to debug the main.elf file Run:
 <div class="highlight"><pre><span></span><code>dbg<span class="w"> </span>main.elf
 </code></pre></div>
-5- **Test with st-link : ** You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:
+5- <strong>Test with st-link</strong> : You can use minicom, gtkterm, or any similar terminal emulator to display the temperature and humidity. Ensure you use the port ttyACM0 and set the baud rate to 115200. You can start minicom with the following command. Run:
 <div class="highlight"><pre><span></span><code>minicom<span class="w"> </span>-D<span class="w"> </span>/dev/ttyACM0<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span>
 </code></pre></div>
-6- **Get Temperature and Humidity : ** After starting minicom, to get the temperature and humidity, type the command:
+6- <strong>Get Temperature and Humidity</strong> :  After starting minicom, to get the temperature and humidity, type the command:
 <div class="highlight"><pre><span></span><code><span class="nv">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>t
 </code></pre></div>
-7- **Get color Infos : ** After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:
+7- <strong>Get color Infos</strong> : After starting minicom, to get the color information such as(temperature (Kelvin) , lux, ..), type the command:
 <div class="highlight"><pre><span></span><code><span class="nv">commande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>c
 </code></pre></div>
 Following this guide, you should be able to successfully clone, build, and test our microcontroller project</p>
