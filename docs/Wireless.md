@@ -96,7 +96,119 @@ uart_init(_USART1, 115200, UART_8N1, on_zigbee_command_received);
 
 Now that we have completed these steps, we can verify if everything functions correctly by conducting the same test mentioned in the section above, but using the 'tty/USB0' port.
 
- 
 # Bluetooth Low Energy (BLE)
 
-Typing ....
+Bluetooth Low Energy (BLE) is a wireless communication technology designed for short-range communication with minimal power consumption. It is commonly used in applications such as wearable devices, smart home products, and health monitoring systems.
+
+## Hardware Requirements
+
+- **X-NUCLEO-IDB05A2**: This is a Bluetooth Low Energy (BLE) expansion board based on the SPBTLE-RF module. It can be used with STM32 Nucleo development boards to add BLE functionality to your projects.
+
+## Configuring Our Services
+
+### Temperature Service
+
+To create a BLE service for temperature data, we use the characteristic UUID `0x2A6E`.
+
+```cpp
+// TEMPERATURE CHAR : 0x2A6E
+primary_short_uuid[0] = 0x6E;
+primary_short_uuid[1] = 0x2A;
+ret = aci_gatt_add_char(HWServW2STHandle, UUID_TYPE_16, primary_short_uuid, 2,
+                        CHAR_PROP_NOTIFY | CHAR_PROP_READ,
+                        ATTR_PERMISSION_NONE,
+                        GATT_NOTIFY_READ_REQ_AND_WAIT_FOR_APPL_RESP,
+                        16, 0, &TemperatureCharHandle);
+
+if (ret != BLE_STATUS_SUCCESS) {
+    goto fail;
+}
+HAL_Delay(100);
+
+```
+
+### Color Temperature Service
+
+To create a BLE service for color temperature data, we use the characteristic UUID 0x2A63.
+
+```cpp
+// Color temp 0x2A63
+primary_short_uuid[0] = 0x63;
+primary_short_uuid[1] = 0x2A;
+ret = aci_gatt_add_char(HWServW2STHandle, UUID_TYPE_16, primary_short_uuid, 2,
+                        CHAR_PROP_NOTIFY | CHAR_PROP_READ,
+                        ATTR_PERMISSION_NONE,
+                        GATT_NOTIFY_READ_REQ_AND_WAIT_FOR_APPL_RESP,
+                        16, 0, &TempColorCharHandle);
+
+if (ret != BLE_STATUS_SUCCESS) {
+    goto fail;
+}
+HAL_Delay(100);
+
+return BLE_STATUS_SUCCESS;
+
+fail:
+return BLE_STATUS_ERROR;
+
+```
+
+### Updating Environmental Data
+
+The function Environmental_Update updates the temperature and color temperature values
+
+```cpp
+
+tBleStatus Environmental_Update(int16_t Temp, int16_t color_temp)
+{
+    tBleStatus ret;
+    uint8_t buff_Temp[2];
+    uint8_t buff_color_temp[2];
+
+    STORE_LE_16(buff_Temp, Temp);
+    ret = aci_gatt_update_char_value(HWServW2STHandle, TemperatureCharHandle, 0, 2, buff_Temp);
+    if (ret != BLE_STATUS_SUCCESS) {
+        return BLE_STATUS_ERROR;
+    }
+
+    STORE_LE_16(buff_color_temp, color_temp);
+    ret = aci_gatt_update_char_value(HWServW2STHandle, TempColorCharHandle, 0, 2, buff_color_temp);
+    if (ret != BLE_STATUS_SUCCESS) {
+        return BLE_STATUS_ERROR;
+    }
+
+    return BLE_STATUS_SUCCESS;
+}
+
+```
+
+### Sending Data
+After receiving a notification, you can send the updated values
+
+```cpp
+
+void SendEnvironmentalData(void)
+{
+    static float temperature, humidity;
+    uint16_t red, green, blue, clear, color_temp;
+    float x, y;
+    int32_t TempToSend = 0;
+    int32_t decPart, intPart;
+    int16_t ret;
+    ret = sht4x_measure_blocking_read(&temperature, &humidity);
+    tcs34725_read_color(&red, &green, &blue, &clear);
+    color_temp = calculateColorTemperature(red, green, blue, &x, &y);
+    MCR_BLUEMS_F2I_1D(temperature, intPart, decPart);
+    TempToSend = intPart * 10 + decPart;
+    printf("\r\ntemperature: %d.%d C", intPart, decPart);
+    printf("\r\ntemperature en kelvin: %d K", color_temp);
+    Environmental_Update(TempToSend, color_temp);
+    HAL_Delay(1000);
+}
+
+```
+
+## Summary
+
+In this project, we successfully set up a Bluetooth Low Energy (BLE) communication system using the X-NUCLEO-IDB05A2 expansion board. We configured services for both temperature and color temperature data, updated these values, and sent the data using BLE notifications.
+
